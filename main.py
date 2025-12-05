@@ -14,7 +14,7 @@ def main():
 
 	reduced = subtract_poly(left_poly, right_poly)
 	print("Reduced form:")
-	powers = sorted(reduced)  # ahora sí es lista
+	powers = sorted(reduced)
 	last_power = powers[-1]
 	for power in powers:
 		coef = reduced[power]
@@ -92,7 +92,7 @@ def solve_degree_two(poly):
 	a = poly.get(2, 0)
 	b = poly.get(1, 0)
 	c = poly.get(0, 0)
-	discriminant = b ** 2 - 4 * a * c # esto es Δ = b² - 4ac
+	discriminant = b ** 2 - 4 * a * c # this is Δ = b² - 4ac
 
 	if discriminant > 0:
 		print("Discriminant is strictly positive, the two solutions are:")
