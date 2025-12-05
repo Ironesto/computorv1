@@ -8,14 +8,22 @@ def main():
 	else:
 		equation = input("Introduce una ecuación: ")
 
-	left, right = equation.split("=")
+	if "=" not in equation:
+		print("Split error, no '='", file=sys.stderr)
+		return 1
+	else:
+		left, right = equation.split("=")
 	left_poly = parse_side(left)
 	right_poly = parse_side(right)
 
 	reduced = subtract_poly(left_poly, right_poly)
-	print("Reduced form:")
 	powers = sorted(reduced)
-	last_power = powers[-1]
+	if powers:
+		last_power = powers[-1]
+	else:
+		print("Sorting error", file=sys.stderr)
+		return 1
+	print("Reduced form:")
 	for power in powers:
 		coef = reduced[power]
 		if power == last_power:
