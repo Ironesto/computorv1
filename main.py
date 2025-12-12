@@ -6,7 +6,7 @@ def main():
 	if len(sys.argv) > 1:
 		equation = sys.argv[1]
 	else:
-		equation = input("Introduce una ecuación: ")
+		equation = input("Write an equation: ")
 
 	if "=" not in equation:
 		print("Split error, no '='", file=sys.stderr)
