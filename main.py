@@ -131,10 +131,5 @@ def my_sqrt(num, precision = 0.00001):
 	
 	return round(res, 6)
 
-def gcd(a, b):
-	while b != 0:
-		a, b = b, a % b
-	return a
-
 if __name__ == "__main__":
 	main()
